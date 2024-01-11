@@ -89,7 +89,70 @@ values = my_dict.values()
   - Parameters: my_list (list of integers).
   - Returns: the sum of unique integers.
 
-...
+### 3. Present in both
+- `3-common_elements.py`: Returns a set of common elements in two sets.
+  - Parameters: set_1, set_2 (sets).
+  - Returns: a set of common elements.
+
+### 4. Only differents
+- `4-only_diff_elements.py`: Returns a set of elements present in only one set.
+  - Parameters: set_1, set_2 (sets).
+  - Returns: a set of unique elements.
+
+### 5. Number of keys
+- `5-number_keys.py`: Returns the number of keys in a dictionary.
+  - Parameters: a_dictionary (dictionary).
+  - Returns: the number of keys.
+
+### 6. Print sorted dictionary
+- `6-print_sorted_dictionary.py`: Prints a dictionary by ordered keys.
+  - Parameters: a_dictionary (dictionary).
+  - Prints: keys in alphabetical order with their corresponding values.
+
+### 7. Update dictionary
+- `7-update_dictionary.py`: Replaces or adds key/value pairs in a dictionary.
+  - Parameters: a_dictionary (dictionary), key (string), value (any type).
+  - Modifies: the input dictionary.
+
+### 8. Simple delete by key
+- `8-simple_delete.py`: Deletes a key in a dictionary.
+  - Parameters: a_dictionary (dictionary), key (string).
+  - Modifies: the input dictionary.
+
+### 9. Multiply by 2
+- `9-multiply_by_2.py`: Returns a new dictionary with all values multiplied by 2.
+  - Parameters: a_dictionary (dictionary with integer values).
+  - Returns: a new dictionary with values multiplied by 2.
+
+### 10. Best score
+- `10-best_score.py`: Returns a key with the biggest integer value in a dictionary.
+  - Parameters: a_dictionary (dictionary with integer values).
+  - Returns: the key with the highest value or None if the dictionary is empty.
+
+### 11. Multiply by using map
+- `11-multiply_list_map.py`: Returns a list with all values multiplied by a number using map.
+  - Parameters: my_list (list of integers), number (integer).
+  - Returns: a new list with each value multiplied by the given number.
+
+### 12. Roman to Integer
+- `12-roman_to_int.py`: Converts a roman numeral to an integer.
+  - Parameters: roman_string (string representing a roman numeral).
+  - Returns: the integer value corresponding to the roman numeral.
+
+### 13. Weighted average!
+- `100-weight_average.py`: Returns the weighted average of integers in a list of tuples.
+  - Parameters: my_list (list of tuples in the format (<score>, <weight>)).
+  - Returns: the weighted average or 0 if the list is empty.
+
+### 14. Squared by using map
+- `101-square_matrix_map.py`: Computes the square value of all integers in a matrix using map.
+  - Parameters: matrix (two-dimensional array).
+  - Returns: a new matrix with each value squared.
+
+### 15. Delete by value
+- `102-complex_delete.py`: Deletes keys with a specific value in a dictionary.
+  - Parameters: a_dictionary (dictionary), value (value to delete).
+  - Modifies: the input dictionary.
 
 ### 16. CPython #1: PyBytesObject
 - `103-python.c`: C functions that print basic information about Python lists and Python bytes objects.
