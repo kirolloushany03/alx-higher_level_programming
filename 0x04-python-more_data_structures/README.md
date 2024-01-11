@@ -1,4 +1,4 @@
-```python
+python
 # More Data Structures: Set, Dictionary
 
 ## Overview
@@ -8,7 +8,7 @@ In this project, I explored sets and dictionaries in Python and practiced using 
 A set is an unordered collection of unique elements in Python. Sets are useful when you want to store multiple items in a single variable and ensure uniqueness. They support various operations such as union, intersection, difference, and symmetric difference.
 
 #### Examples:
-```python
+python
 # Creating a set
 my_set = {1, 2, 3, 4, 5}
 
@@ -25,13 +25,13 @@ set2 = {3, 4, 5}
 union_set = set1.union(set2)
 intersection_set = set1.intersection(set2)
 difference_set = set1.difference(set2)
-```
+
 
 ### Dictionaries in Python
 A dictionary is a collection of key-value pairs in Python. It is a mutable, unordered collection that is used to store and retrieve data efficiently. Each key in a dictionary must be unique, and you can use keys to access corresponding values. Dictionaries are widely used for tasks involving mapping and associative arrays.
 
 #### Examples:
-```python
+python
 # Creating a dictionary
 my_dict = {'name': 'John', 'age': 25, 'city': 'New York'}
 
@@ -47,7 +47,7 @@ del my_dict['age']
 # Dictionary operations
 keys = my_dict.keys()
 values = my_dict.values()
-```
+
 
 ## Function Prototypes 💾
 
@@ -93,4 +93,3 @@ values = my_dict.values()
 
 ### 16. CPython #1: PyBytesObject
 - `103-python.c`: C functions that print basic information about Python lists and Python bytes objects.
-```
