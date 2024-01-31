@@ -1,0 +1,59 @@
+Test cases for add_integer function
+----------------------------------
+
+first will import "add_integer" from the "0-add_integer" module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+    Integers addition
+    >>> add_integer(1, 2)
+    3
+
+    +ve and -ve numbers
+    >>> add_integer(100, -2)
+    98
+
+    Adding only one +ve number
+    >>> add_integer(2)
+    100
+
+    Adding one -ve number
+    >>> add_integer(-66)
+    32
+
+    Float values
+    >>> add_integer(100.3, -2)
+    98
+
+    >>> add_integer(2.0, 5.0)
+    7
+
+    >>> add_integer(-2.1, -5.66)
+    -7
+
+    >>> add_integer(59, 82)
+    141
+
+    Type error cases
+    b is not integer case: 4 + "school" = TypeError
+    >>> add_integer(4, "school")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    a is not integer case: "Hi" + 5 = TypeError
+    >>> add_integer("Hi", 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    None inserted case
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer("Hi", "There")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(22, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
