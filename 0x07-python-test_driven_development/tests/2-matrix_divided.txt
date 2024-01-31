@@ -1,0 +1,36 @@
+------------------------------------------
+how to use the test of 2-matrix_divided.py
+------------------------------------------
+
+
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+normal case
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+
+::
+
+ case if rows not same size
+>>> matrix_divided([[1, 3, 5, 6, 8, 8, 6], [2, 3, 4]], 2)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+::
+
+zerodivisionerror
+>>> matrix_divided([[4, 5, 6], [9, 6, 3]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+::
+
+div is not a intger or float
+
+>>> matrix_divided([[1,2,3], [6,7,8]], "six")
+Traceback (most recent call last):
+...
+TypeError: div must be a number
