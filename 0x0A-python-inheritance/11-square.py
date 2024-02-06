@@ -6,11 +6,14 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """
-    Square class
-    """
+    """Basic class Square that inherits from Rectangle"""
     def __init__(self, size):
-        """initialization"""
+        """Initialize a new Square.
+
+        Args:
+            size must be private. No getter or setter, must be a positive
+            integer, validated by integer_validator
+        """
         super().integer_validator("size", size)
         self.__size = size
 
