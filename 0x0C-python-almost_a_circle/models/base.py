@@ -1,24 +1,16 @@
 #!/usr/bin/python3
-
-"""Base Module"""
-
+""" A module contain the base class """
 import json
 import turtle
 
+
 class Base:
-    """
-    Base class for creating and manipulating objects.
-    """
+    """The base class"""
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        Initializes an instance of Base.
-
-        Args:
-            id (int): Identification number.
-        """
+        """Initalization"""
 
         if id:
             self.id = id
@@ -28,15 +20,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """
-        Returns the JSON string representation of a list of dictionaries.
-
-        Args:
-            list_dictionaries (list): List of dictionaries.
-
-        Returns:
-            str: JSON string representation.
-        """
+        """Return JSON array represntation"""
 
         if list_dictionaries:
             return json.dumps(list_dictionaries)
@@ -45,29 +29,18 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """
-        Saves a list of objects to a JSON file.
+        """Make a JSON class file represntation"""
 
-        Args:
-            list_objs (list): List of objects to save.
-        """
-
-        list_dict = ([*map(lambda self: self.to_dictionary(), list_objs)]
-                     if list_objs else [])
+        list_dict = (
+            [*map(lambda self: self.to_dictionary(), list_objs)]
+            if list_objs else []
+        )
         with open(f"{cls.__name__}.json", "w") as f:
             f.write(Base.to_json_string(list_dict))
 
     @staticmethod
     def from_json_string(json_string):
-        """
-        Creates a list of objects from a JSON string.
-
-        Args:
-            json_string (str): JSON string representation.
-
-        Returns:
-            list: List of objects.
-        """
+        """Make a list of JSON class file represntation"""
 
         if json_string:
             return json.loads(json_string)
@@ -76,15 +49,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """
-        Creates an instance of Base from a dictionary.
-
-        Args:
-            **dictionary: Arbitrary keyword arguments.
-
-        Returns:
-            obj: Instance of Base.
-        """
+        """Create instanse from a dictionary"""
 
         obj = {}
         try:
@@ -97,33 +62,25 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """
-        Loads instances of Base from a JSON file.
-
-        Returns:
-            list: List of instances of Base.
-        """
-
+        """Create instanse from a json file"""
         try:
             with open(f"{cls.__name__}.json", "r") as f:
-                return [cls.create(**inst) for inst in cls.from_json_string(f.read())]
+                return [cls.create(**inst) for inst in
+                        cls.from_json_string(f.read())]
         except FileNotFoundError:
             return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """
-        Saves a list of objects to a CSV file.
-
-        Args:
-            list_objs (list): List of objects to save.
-        """
+        """Make a CVS class file represntation"""
 
         r_keys = ("id", "width", "height", "x", "y")
         s_keys = ("id", "size", "x", "y")
         class_name = cls.__name__
-        list_dict = ([*map(lambda self: self.to_dictionary(), list_objs)]
-                     if list_objs else [])
+        list_dict = (
+            [*map(lambda self: self.to_dictionary(), list_objs)]
+            if list_objs else []
+        )
         csv_list = []
         for inst_dict in list_dict:
             inst_list = []
@@ -147,13 +104,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """
-        Loads instances of Base from a CSV file.
-
-        Returns:
-            list: List of instances of Base.
-        """
-
+        """Load a class from a CVS class file represntation"""
         class_name = cls.__name__
         try:
             with open(f"{class_name}.csv", "r") as f:
@@ -170,22 +121,12 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """
-        Draws rectangles and squares using turtle graphics.
-
-        Args:
-            list_rectangles (list): List of Rectangle objects.
-            list_squares (list): List of Square objects.
-        """
-
         cursor = turtle.Turtle()
         cursor.color("blue", "red")
         cursor.penup()
         cursor.left(180)
         cursor.forward(50)
         cursor.pendown()
-
-        # Draw rectangles
         for rect in list_rectangles:
             width = rect.width
             height = rect.height
@@ -210,11 +151,10 @@ class Base:
         cursor.forward(50)
         cursor.pendown()
 
-        # Draw squares
         for square in list_squares:
             size = square.size
             cursor.begin_fill()
-            for _ in range(3):
+            for i in range(3):
                 cursor.forward(size)
                 cursor.left(90)
             cursor.forward(size)
@@ -224,7 +164,6 @@ class Base:
             cursor.right(90)
             cursor.pendown()
             cursor.end_fill()
-
         cursor.penup()
         cursor.goto(0, 0)
         cursor.left(90)
