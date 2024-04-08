@@ -1,7 +1,7 @@
 #!/usr/bin/node
-let a = "C is fun", b="Python is cool", c ="JavaScript is amazing";
-console.log(`
-${a}
-${b}
-${c}
-`);
+function printing () {
+  console.log('C is fun');
+  console.log('Python is cool');
+  console.log('JavaScript is amazing');
+}
+printing();
