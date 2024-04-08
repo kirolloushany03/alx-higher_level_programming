@@ -1,1 +1,1 @@
-this the readme of javascript dir
+sthis the readme of javascript dir
