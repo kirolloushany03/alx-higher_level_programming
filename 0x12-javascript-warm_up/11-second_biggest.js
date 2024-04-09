@@ -1,9 +1,15 @@
 #!/usr/bin/node
-// searches the second biggest integer in the list of arguments.
+let first = -Infinity;
+let second = -Infinity;
+let number;
+const argv = process.argv;
 
-if (process.argv.length <= 3) {
-  console.log(0);
-} else {
-  const list = process.argv.sort();
-  console.log(list.reverse()[1]);
+for (let i = 2; argv[i]; i++) {
+  number = Math.floor(+argv[i]);
+  if (number > first) {
+    [first, second] = [number, first];
+  } else if (number > second) {
+    second = number;
+  }
 }
+console.log(second !== -Infinity ? second : 0);
