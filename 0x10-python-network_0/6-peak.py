@@ -13,22 +13,20 @@
             -> still O(n)
 """
 
+def find_peak(lst):
+    """Function that finds a peak in a list of unsorted integers"""
+    length = len(lst)
+    if length == 0:
+        return None
 
-def find_peak(list_of_integers):
-    # Base case: if the list has only one element, it is a peak
-    if len(list_of_integers) == 1:
-        return list_of_integers[0]
-    
-    # Find the middle index
-    mid = len(list_of_integers) // 2
-    
-    # Check if the middle element is a peak
-    if (mid == 0 or list_of_integers[mid - 1] <= list_of_integers[mid]) and \
-        (mid == len(list_of_integers) - 1 or list_of_integers[mid] >= list_of_integers[mid + 1]):
-        return list_of_integers[mid]
-    
-    # If the middle element is not a peak, recursively search in the half where the neighbor is greater
-    if mid > 0 and list_of_integers[mid - 1] > list_of_integers[mid]:
-        return find_peak(list_of_integers[:mid])
-    else:
-        return find_peak(list_of_integers[mid + 1:])
+    def peak(length, m):
+        """ " Helper function to find the peak"""
+        if (m == 0 or lst[m] >= lst[m - 1]) and (
+            m == length - 1 or lst[m] >= lst[m + 1]
+        ):
+            return lst[m]
+        if m > 0 and lst[m - 1] > lst[m]:
+            return peak(m, m // 2)
+        return peak(length, m + (length - m) // 2)
+
+    return peak(length, length // 2)
