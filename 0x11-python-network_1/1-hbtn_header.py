@@ -15,6 +15,6 @@ if __name__ == "__main__":
         headers = response.headers
 
         if "X-Request-Id" in headers:
-            print(headers["X-Request-Id"])
+            print(dict(response.headers).get("X-Request-Id"))
         else:
             print("X-Request-Id header not found")
