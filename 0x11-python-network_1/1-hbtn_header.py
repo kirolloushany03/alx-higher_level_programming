@@ -10,7 +10,7 @@ if __name__ == "__main__":
     import urllib
     import sys
 
-    url = sys.argv[1]
+    url = urllib.request.Request(sys.argv[1])
     with urllib.request.urlopen(url) as response:
         headers = response.headers
 
