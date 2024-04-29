@@ -16,16 +16,16 @@ if __name__ == "__main__":
 
     url = "http://0.0.0.0:5000/search_user"
 
-    data = {"q": q}
-    response = requests.post(url, data=data)
+    response = requests.post(url, data={"q": q})
 
     try:
         response_json = response.json()
 
         if response.json():
             for user in response_json:
-                print(f"[{user['id']}] {user['name']}")
+                print(f"[{response.get('id')}] {response.get('name')}")
         else:
             print("No result")
+            
     except json.JSONDecodeError:
         print("Not a valid JSON")
