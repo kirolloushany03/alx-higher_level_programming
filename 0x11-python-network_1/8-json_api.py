@@ -9,10 +9,11 @@ import sys
 import json
 
 if __name__ == "__main__":
-    q = ""
-
+    
     if len(sys.argv) > 1:
         q = sys.argv[1]
+    else:
+        q = ""
 
     url = "http://0.0.0.0:5000/search_user"
 
