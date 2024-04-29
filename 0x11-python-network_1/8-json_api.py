@@ -26,6 +26,6 @@ if __name__ == "__main__":
                 print(f"[{response.get('id')}] {response.get('name')}")
         else:
             print("No result")
-            
-    except json.JSONDecodeError:
+
+    except ValueError:
         print("Not a valid JSON")
