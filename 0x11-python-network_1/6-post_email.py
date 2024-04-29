@@ -12,4 +12,4 @@ if __name__ == "__main__":
     data = {'email': email}
     response = requests.post(url, data=data)
 
-    print(f"Your email is: {response}")
+    print(response.text)
