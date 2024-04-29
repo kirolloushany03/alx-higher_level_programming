@@ -23,7 +23,7 @@ if __name__ == "__main__":
         response_json = response.json()
 
         if response_json:
-            print(f"[{response.get('id')}] {response.get('name')}")
+            print(f"[{response_json.get('id')}] {response_json.get('name')}")
         else:
             print("No result")
 
