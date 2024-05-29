@@ -1,1 +1,1 @@
-readme of jquery and javascript
+readme of java script 
